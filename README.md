@@ -113,6 +113,41 @@ Summary
 Once deployed, grab the contract address and put it into the explorer:
 https://www.rinkeby.io/#explorer
 
+# Calling the contract in Python
+
+Setup your environment with python 3.7
+
+```bash
+pipenv --python 3.7
+pipenv install
+```
+
+## Calling the addFileReference Function (Transaction -- costs gas)
+
+This is a transaction and requires some gas. Open up `createTransaction.py` to have a look. It's setup to run locally but can be modified in the comments to point to a hosted node on Infura.
+Have the following environment variables set:
+
+**CONTRACT_ADDRESS** and **PRIVATE_KEY**
+
+Infura requires that raw transactions are sent and signed.
+
+Modify the source code with the desired values. 
+
+Run:
+
+```bash
+pipenv run python createTransaction.py
+```
+
+## Calling getReference Function (Call -- no gas required)
+
+Make sure you change the values to match in `readContractData.py`
+
+```bash
+pipenv run python readContractData.py
+```
+
+It should spit back the values you put on the blockchain earlier.
 
 # References
 - https://iancoleman.io/bip39/
