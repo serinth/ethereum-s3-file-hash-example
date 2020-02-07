@@ -28,14 +28,14 @@ contract S3FileStorage {
         _;
     }
 
-    function addFileReference(string memory id, string memory url, string memory fileHash) public onlyOwner {
-        fileHashes[id].s3URL = url;
-        fileHashes[id].fileHash = fileHash;
+    function addFileReference(string memory _id, string memory _url, string memory _fileHash) public onlyOwner {
+        fileHashes[_id].s3URL = _url;
+        fileHashes[_id].fileHash = _fileHash;
 
-        emit AddFile(id, url, fileHash);
+        emit AddFile(_id, _url, _fileHash);
     }
 
-    function getReference(string memory id) public view returns (string memory, string memory) {
-        return (fileHashes[id].s3URL, fileHashes[id].fileHash);
+    function getReference(string memory _id) public view returns (string memory, string memory) {
+        return (fileHashes[_id].s3URL, fileHashes[_id].fileHash);
     }
 }
