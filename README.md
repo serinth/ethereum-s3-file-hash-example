@@ -12,7 +12,10 @@ Start the **develop** console:
 truffle develop
 ```
 
-
+Running Unit Tests:
+```bash
+truffle test
+```
 ## Truffle Develop CLI Quick Reference
 `accounts`
 
