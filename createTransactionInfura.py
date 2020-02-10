@@ -17,14 +17,16 @@ with open('build/contracts/S3FileStorage.json') as f:
     info = json.load(f)
 abi = info['abi']
 
-# This is the address of the contract
 contract = w3.eth.contract(address=contract_address, abi=abi)
 
 pprint(contract.all_functions())
 
+estimated_gas = contract.functions.addFileReference('tripid1', 'someurl', 'somehash').estimateGas({'gas': 300000, 'from': wallet_address})
+pprint(f"Estimating Gas price for addFileReference: {estimated_gas}")
+
 transaction = contract.functions.addFileReference('tripid1', 'someurl', 'somehash').buildTransaction({
     'from': wallet_address,
-    'gas': 300000,
+    'gas': int(estimated_gas * 1.3),
     'nonce': w3.eth.getTransactionCount(wallet_address)
 })
 

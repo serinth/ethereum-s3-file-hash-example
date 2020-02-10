@@ -129,14 +129,21 @@ Have the following environment variables set:
 
 **CONTRACT_ADDRESS** and **PRIVATE_KEY**
 
-Infura requires that raw transactions are sent and signed.
-
-Modify the source code with the desired values. 
-
+### Running locally on Ganache or Truffle Develop
 Run:
 
 ```bash
 pipenv run python createTransaction.py
+```
+
+### Using Infura
+
+- **Do Not** whitelist the contract address. That will throw a 403 error.
+- Using web3, we must build and send the raw transaction
+
+For Infura, run:
+```
+pipenv run python createTransactionInfura.py
 ```
 
 ## Calling getReference Function (Call -- no gas required)
@@ -149,9 +156,7 @@ pipenv run python readContractData.py
 
 It should spit back the values you put on the blockchain earlier.
 
-# Using Infura
-`estimateGas()` costs gas will fail from the setting on the servers. That is removed.
-**Do Not** whitelist the contract address. That will throw a 403 error.
+
 
 # References
 - https://iancoleman.io/bip39/
