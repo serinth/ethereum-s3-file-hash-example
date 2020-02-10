@@ -149,6 +149,10 @@ pipenv run python readContractData.py
 
 It should spit back the values you put on the blockchain earlier.
 
+# Using Infura
+`estimateGas()` costs gas will fail from the setting on the servers. That is removed.
+**Do Not** whitelist the contract address. That will throw a 403 error.
+
 # References
 - https://iancoleman.io/bip39/
 - https://www.trufflesuite.com/tutorials/using-infura-custom-provider
