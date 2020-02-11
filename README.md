@@ -136,7 +136,7 @@ Have the following environment variables set:
 Run:
 
 ```bash
-pipenv run python createTransaction.py
+pipenv run python -m examples.createTransaction
 ```
 
 ### Using Infura
@@ -146,7 +146,7 @@ pipenv run python createTransaction.py
 
 For Infura, run:
 ```
-pipenv run python createTransactionInfura.py
+pipenv run python -m examples.createTransactionInfura
 ```
 
 ## Calling getReference Function (Call -- no gas required)
@@ -154,7 +154,7 @@ pipenv run python createTransactionInfura.py
 Make sure you change the values to match in `readContractData.py`
 
 ```bash
-pipenv run python readContractData.py
+pipenv run python -m examples.readContractData
 ```
 
 It should spit back the values you put on the blockchain earlier.

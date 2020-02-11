@@ -8,9 +8,8 @@ wallet_address = os.getenv('PUBLIC_ADDRESS')
 contract_address = os.getenv('CONTRACT_ADDRESS')
 private_key = os.getenv('PRIVATE_KEY')
 infura_key = os.getenv('INFURA_KEY')
+
 w3 = Web3(Web3.HTTPProvider(f'https://rinkeby.infura.io/v3/{infura_key}'))
-
-
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
 with open('build/contracts/S3FileStorage.json') as f:
